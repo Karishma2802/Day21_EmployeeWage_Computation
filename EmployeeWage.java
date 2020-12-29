@@ -1,30 +1,30 @@
 public class EmployeeWage
 {
+	public static final int FULL_TIME=1;
+	public static final int PART_TIME=2;
+	public static final int EMP_RATE_PER_HR=20;
+
 	public static void main(String[] args)
 	{
-		int fullTime=1;
-		int partTime=2;
 		int empHrs=0;
-		int empRatePerHr=20;
 		int salary=0;
-		int Result=(int)(Math.random()*10)%3;
+		int empCheck=(int)(Math.random()*10)%3;
 
-//		System.out.println("Result= " +Result);
-
-		if(Result == fullTime)
+		switch(empCheck)
 		{
+			case FULL_TIME:
 			empHrs=8;
-		}
-		else if(Result == partTime)
-		{
+			break;
+
+			case PART_TIME:
 			empHrs=4;
-		}
-		else
-		{
-			salary=0;
+			break;
+
+			default:
+			empHrs=0;
 		}
 
-		salary=(empHrs*empRatePerHr);
+		salary=empHrs*EMP_RATE_PER_HR;
 		System.out.println("Salary is "+salary);
 		}
 }
